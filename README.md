@@ -2,6 +2,38 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### 1) Configure Convex
+Create `.env.local` with your Convex URL:
+
+```bash
+NEXT_PUBLIC_CONVEX_URL=your_convex_url
+NEXT_PUBLIC_CONVEX_SITE_URL=your_convex_site_url
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+OPENAI_API_KEY=your_openai_key
+```
+
+Set Better Auth secrets in Convex:
+
+```bash
+npx convex env set BETTER_AUTH_SECRET $(openssl rand -base64 32)
+npx convex env set SITE_URL http://localhost:3000
+npx convex env set GITHUB_CLIENT_ID your_github_client_id
+npx convex env set GITHUB_CLIENT_SECRET your_github_client_secret
+npx convex env set GOOGLE_CLIENT_ID your_google_client_id
+npx convex env set GOOGLE_CLIENT_SECRET your_google_client_secret
+```
+
+Then run:
+
+```bash
+npx convex dev
+```
+
+### 2) Run the app
+```bash
+npm run dev
+```
+
 First, run the development server:
 
 ```bash
